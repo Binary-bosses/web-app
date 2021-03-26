@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CasesComponent } from './cases/cases.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { CasesDetailsComponent } from './cases-details/cases-details.component';
 import { CasesStatComponent } from './cases-stat/cases-stat.component';
 import { AddCasesComponent } from './add-cases/add-cases.component';
 import { EditCasesComponent } from './edit-cases/edit-cases.component';
 
 const routes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: { title: 'Hackathon Dashboard' }
+  },
   {
     path: 'cases',
     component: CasesComponent,
@@ -33,7 +39,7 @@ const routes: Routes = [
     data: { title: 'Edit Cases' }
   },
   { path: '',
-    redirectTo: '/cases',
+    redirectTo: '/dashboard',
     pathMatch: 'full'
   }
 ];
